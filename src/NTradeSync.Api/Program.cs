@@ -1,6 +1,9 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using NTradeSync.Api.Extensions;
 
-app.MapGet("/", () => "Hello World!");
+var builder = WebApplication.CreateBuilder(args);
+
+builder.AddApi().AddInfrastructure();
+
+var app = builder.Build();
 
 await app.RunAsync();
