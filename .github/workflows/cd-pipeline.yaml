@@ -1,0 +1,25 @@
+﻿name: CD Pipeline
+
+on:
+  release: 
+    types: [created]
+    
+env:
+  IMAGE_NAME: "ghcr.io/${{ github.repository_owner }}/ntradesync:${{ github.event.release.tag }}"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Build Docker image
+        run: docker build -f ./.docker/Api.Dockerfile -t $IMAGE_NAME .
+      - name: Login to GitHub Container Registry
+        run: echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
+      - name: Push Docker image to GitHub Container Registry
+        run: docker push $IMAGE_NAME
