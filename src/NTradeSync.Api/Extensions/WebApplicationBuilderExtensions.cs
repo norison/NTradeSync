@@ -19,6 +19,12 @@ public static class WebApplicationBuilderExtensions
             .ValidateDataAnnotations()
             .ValidateOnStart();
         
+        builder.Services
+            .AddOptions<TelegramBotOptions>()
+            .BindConfiguration("TelegramBot")
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
+        
         return builder;
     }
 }

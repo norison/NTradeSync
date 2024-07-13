@@ -22,6 +22,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0D2581A9-3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTradeSync.Application.Tests", "test\NTradeSync.Application.Tests\NTradeSync.Application.Tests.csproj", "{7F6F1E4F-BC57-48CF-A79D-EF94833FA069}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docker", ".docker", "{95A183A6-BA56-4649-9F12-25BD7EB0F320}"
+	ProjectSection(SolutionItems) = preProject
+		.docker\Api.Dockerfile = .docker\Api.Dockerfile
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
