@@ -18,9 +18,6 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-      - name: Print tag name
-        run: |
-          echo "Tag name: ${{ github.event.release.tag_name }}"
       - name: Build Docker image
         run: docker build -f ./.docker/Api.Dockerfile -t $IMAGE_NAME .
       - name: Login to GitHub Container Registry
