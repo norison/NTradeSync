@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTradeSync.Persistence", "s
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github/workflows", ".github/workflows", "{FD03FDC8-C0E9-4601-AB51-0BDC3A8FB46B}"
 	ProjectSection(SolutionItems) = preProject
-		.github\workflows\pipeline.yaml = .github\workflows\pipeline.yaml
+		.github\workflows\ci-pipeline.yaml = .github\workflows\ci-pipeline.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0D2581A9-366E-48AE-94A1-A0BE46023D7E}"
